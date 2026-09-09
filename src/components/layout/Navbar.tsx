@@ -1,4 +1,3 @@
-
 import { Menu, X } from "lucide-react";
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -78,21 +77,31 @@ function Navbar() {
           {/* Desktop navigation */}
           <div className="navbar-center hidden lg:flex">
             <nav className="flex items-center gap-1">
-              {navigation.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={(event) => handleNavigation(event, item.href)}
-                  className="rounded-full px-4 py-2 text-sm font-medium text-(--olive-dark)/70 transition-colors hover:bg-(--olive) hover:text-(--cream)"
-                >
-                  {item.label}
-                </a>
-              ))}
+              {navigation.map((item) =>
+                item.href.startsWith("/#") ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={(event) => handleNavigation(event, item.href)}
+                    className="rounded-full px-4 py-2 text-sm font-medium text-(--olive-dark)/70 transition-colors hover:bg-(--olive) hover:text-(--cream)"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className="rounded-full px-4 py-2 text-sm font-medium text-(--olive-dark)/70 transition-colors hover:bg-(--olive) hover:text-(--cream)"
+                  >
+                    {item.label}
+                  </Link>
+                ),
+              )}
             </nav>
           </div>
 
-          {/* Desktop right side */}
-          <div className="navbar-end lg:flex">
+          {/* Desktop right side (Only visible on lg screens and above) */}
+          <div className="navbar-end hidden lg:flex">
             <Link
               to="/contact"
               className="btn rounded-full border-none bg-(--olive-dark) px-5 text-sm font-semibold text-(--cream) hover:bg-(--olive)"
@@ -100,8 +109,8 @@ function Navbar() {
               Join us
             </Link>
           </div>
-
-          {/* Mobile menu button */}
+          
+          {/* Mobile menu button (Only visible on screens smaller than lg) */}
           <div className="navbar-end lg:hidden">
             <label
               htmlFor="mobile-navigation"
@@ -152,16 +161,26 @@ function Navbar() {
 
             {/* Mobile navigation */}
             <nav className="flex flex-col gap-2">
-              {navigation.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={(event) => handleNavigation(event, item.href)}
-                  className="rounded-xl px-4 py-3 text-base font-medium text-(--cream)/70 transition-colors hover:bg-white/10 hover:text-(--cream)"
-                >
-                  {item.label}
-                </a>
-              ))}
+              {navigation.map((item) =>
+                item.href.startsWith("/#") ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={(event) => handleNavigation(event, item.href)}
+                    className="rounded-xl px-4 py-3 text-base font-medium text-(--cream)/70 transition-colors hover:bg-white/10 hover:text-(--cream)"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className="rounded-xl px-4 py-3 text-base font-medium text-(--cream)/70 transition-colors hover:bg-white/10 hover:text-(--cream)"
+                  >
+                    {item.label}
+                  </Link>
+                ),
+              )}
             </nav>
 
             {/* Mobile CTA */}
