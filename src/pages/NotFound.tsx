@@ -1,7 +1,7 @@
 import { ArrowLeft, Home } from "lucide-react";
 import { Link } from "react-router-dom";
 
-function NotFound() {
+function NotFoundPage() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-(--olive-dark) px-5 py-16 text-(--cream)">
       <div className="w-full max-w-3xl text-center">
@@ -51,4 +51,4 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+export default NotFoundPage;

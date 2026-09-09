@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 // footer links
 const footerLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Features", href: "#features" },
-  { label: "Trainers", href: "#trainers" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Features", href: "/#features" },
+  { label: "Trainers", href: "/#trainers" },
+  { label: "Pricing", href: "/subscription" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "Contact", href: "/contact" },
 ];
 
 function Footer() {
@@ -38,15 +38,25 @@ function Footer() {
             <h3 className="font-semibold">Explore</h3>
 
             <nav className="mt-4 grid grid-cols-2 gap-3">
-              {footerLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-(--cream)/50 transition-colors hover:text-(--cream)"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {footerLinks.map((link) =>
+                link.href.startsWith("/#") ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-sm text-(--cream)/50 transition-colors hover:text-(--cream)"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="text-sm text-(--cream)/50 transition-colors hover:text-(--cream)"
+                  >
+                    {link.label}
+                  </Link>
+                ),
+              )}
             </nav>
           </div>
 

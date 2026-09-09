@@ -3,10 +3,10 @@ import Navbar from "../components/layout/Navbar";
 import Features from "../components/sections/Features";
 import Gallery from "../components/sections/Gallery";
 import Hero from "../components/sections/Hero";
-import Reviews from "../components/sections/Reviews";
+// import Reviews from "../components/sections/Reviews";
 import Trainers from "../components/sections/Trainers";
 
-function Home() {
+function HomePage() {
   return (
     <>
       <Navbar />
@@ -16,7 +16,7 @@ function Home() {
         <Features />
         <Trainers />
         <Gallery />
-        <Reviews />
+        {/*<Reviews />*/}
       </main>
 
       <Footer />
@@ -24,4 +24,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

@@ -1,10 +1,11 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import PublicLayout from "../layouts/PublicLayout";
-import Contact from "../pages/Contact";
-import Home from "../pages/Home";
-import NotFound from "../pages/NotFound";
-import Subscription from "../pages/Subcription";
+
+import HomePage from "../pages/Home";
+import NotFoundPage from "../pages/NotFound";
+import SubscriptionPage from "../pages/Subcription";
+import ContactPage from "../pages/Contact";
 
 function AppRoutes() {
   return (
@@ -12,14 +13,14 @@ function AppRoutes() {
       <Routes>
         {/*Public layout routes*/}
         <Route element={<PublicLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/subscription" element={<Subscription />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/subscription" element={<SubscriptionPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Route>
 
         {/*Redirects & fallback*/}
         <Route path="/home" element={<Navigate to="/" replace />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

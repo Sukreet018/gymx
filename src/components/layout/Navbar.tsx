@@ -7,9 +7,9 @@ const navigation = [
   { label: "Features", href: "/#features" },
   { label: "Trainers", href: "/#trainers" },
   { label: "Pricing", href: "/subscription" },
-  { label: "Gallery", href: "/#gallery" },
   { label: "Reviews", href: "/#reviews" },
   { label: "Contact", href: "/contact" },
+  { label: "Gallery", href: "/#gallery" },
 ];
 
 function Navbar() {

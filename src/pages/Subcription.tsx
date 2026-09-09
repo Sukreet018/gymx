@@ -1,9 +1,9 @@
 import Footer from "../components/layout/Footer";
 import Navbar from "../components/layout/Navbar";
-import Contact from "./Contact";
+import Contact from "../components/sections/Contact";
 import Pricing from "../components/sections/Pricing";
 
-function Subscription() {
+function SubscriptionPage() {
   return (
     <>
       <Navbar />
@@ -12,8 +12,9 @@ function Subscription() {
         <Contact />
       </main>
       <Footer />
+  
     </>
   );
 }
 
-export default Subscription;
+export default SubscriptionPage;
