@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import PublicLayout from "../layouts/PublicLayout";
 import Contact from "../pages/Contact";
@@ -8,7 +8,7 @@ import Subscription from "../pages/Subcription";
 
 function AppRoutes() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         {/*Public layout routes*/}
         <Route element={<PublicLayout />}>
@@ -21,7 +21,7 @@ function AppRoutes() {
         <Route path="/home" element={<Navigate to="/" replace />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
