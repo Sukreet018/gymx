@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const footerLinks = [
   { label: "Home", href: "/" },
   { label: "Pricing", href: "/subscription" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/contact" }
 ];
 
 function Footer() {
