@@ -7,7 +7,6 @@ const navigation = [
   { label: "Features", href: "/#features" },
   { label: "Trainers", href: "/#trainers" },
   { label: "Pricing", href: "/subscription" },
-  { label: "Reviews", href: "/#reviews" },
   { label: "Contact", href: "/contact" },
   { label: "Gallery", href: "/#gallery" },
 ];
