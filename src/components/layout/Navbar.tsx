@@ -1,8 +1,8 @@
+
 import { Menu, X } from "lucide-react";
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-// nav links
 const navigation = [
   { label: "Home", href: "/" },
   { label: "Features", href: "/#features" },
@@ -17,7 +17,6 @@ function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // scroll handler
   const handleNavigation = (
     event: React.MouseEvent<HTMLAnchorElement>,
     href: string,
@@ -35,8 +34,6 @@ function Navbar() {
         behavior: "smooth",
         block: "start",
       });
-
-      window.history.replaceState(null, "", href);
     } else {
       navigate("/", {
         state: { scrollTo: targetId },
@@ -44,7 +41,6 @@ function Navbar() {
     }
   };
 
-  // page load scroll effect
   React.useEffect(() => {
     const targetId = location.state?.scrollTo;
 
@@ -58,28 +54,28 @@ function Navbar() {
         block: "start",
       });
 
-      window.history.replaceState(null, "", `/#${targetId}`);
+      navigate("/", { replace: true, state: {} });
     }, 100);
 
     return () => window.clearTimeout(timer);
-  }, [location.pathname, location.state]);
+  }, [location.pathname, location.state, navigate]);
 
   return (
     <header className="fixed top-0 z-50 w-full px-3 pt-3 sm:px-6 sm:pt-4 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        {/* desktop navbar container */}
+        {/* Desktop navbar */}
         <div className="navbar min-h-14 rounded-full border border-(--border-light) bg-base-100/95 px-4 shadow-sm backdrop-blur-md sm:min-h-16 sm:px-6">
-          {/* logo */}
+          {/* Logo */}
           <div className="navbar-start">
             <Link
-              to="/home"
+              to="/"
               className="font-display text-xl font-extrabold tracking-tight text-(--olive-dark) sm:text-2xl"
             >
               gym<span className="text-(--champagne)">X</span>
             </Link>
           </div>
 
-          {/* desktop nav links */}
+          {/* Desktop navigation */}
           <div className="navbar-center hidden lg:flex">
             <nav className="flex items-center gap-1">
               {navigation.map((item) => (
@@ -95,24 +91,17 @@ function Navbar() {
             </nav>
           </div>
 
-          {/* desktop auth buttons */}
-          <div className="navbar-end hidden gap-2 lg:flex">
+          {/* Desktop right side */}
+          <div className="navbar-end lg:flex">
             <Link
-              to="/login"
-              className="btn btn-ghost rounded-full px-4 text-sm font-semibold text-(--olive-dark)"
-            >
-              Log in
-            </Link>
-
-            <Link
-              to="/signup"
+              to="/contact"
               className="btn rounded-full border-none bg-(--olive-dark) px-5 text-sm font-semibold text-(--cream) hover:bg-(--olive)"
             >
-              Start training
+              Join us
             </Link>
           </div>
 
-          {/* mobile menu button */}
+          {/* Mobile menu button */}
           <div className="navbar-end lg:hidden">
             <label
               htmlFor="mobile-navigation"
@@ -125,7 +114,7 @@ function Navbar() {
         </div>
       </div>
 
-      {/* mobile drawer menu */}
+      {/* Mobile drawer */}
       <div className="drawer drawer-end lg:hidden">
         <input
           id="mobile-navigation"
@@ -135,7 +124,6 @@ function Navbar() {
 
         <div className="drawer-content" />
 
-        {/* mobile drawer content */}
         <div className="drawer-side z-60">
           <label
             htmlFor="mobile-navigation"
@@ -144,7 +132,7 @@ function Navbar() {
           />
 
           <aside className="min-h-full w-[min(85vw,20rem)] bg-(--olive-dark) p-6 text-(--cream)">
-            {/* mobile drawer header */}
+            {/* Drawer header */}
             <div className="mb-10 flex items-center justify-between">
               <Link
                 to="/"
@@ -162,7 +150,7 @@ function Navbar() {
               </label>
             </div>
 
-            {/* mobile nav links */}
+            {/* Mobile navigation */}
             <nav className="flex flex-col gap-2">
               {navigation.map((item) => (
                 <a
@@ -176,20 +164,13 @@ function Navbar() {
               ))}
             </nav>
 
-            {/* mobile auth buttons */}
-            <div className="mt-8 flex flex-col gap-3">
+            {/* Mobile CTA */}
+            <div className="mt-8">
               <Link
-                to="/login"
-                className="btn rounded-xl border border-white/20 bg-transparent text-(--cream) shadow-none hover:bg-white/10"
+                to="/contact"
+                className="btn w-full rounded-xl border-none bg-(--cream) text-(--olive-dark) shadow-none hover:bg-(--cream-dark)"
               >
-                Log in
-              </Link>
-
-              <Link
-                to="/signup"
-                className="btn rounded-xl border-none bg-(--cream) text-(--olive-dark) shadow-none hover:bg-(--cream-dark)"
-              >
-                Start training
+                Join us
               </Link>
             </div>
           </aside>
