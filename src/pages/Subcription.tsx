@@ -1,6 +1,6 @@
 import Footer from "../components/layout/Footer";
 import Navbar from "../components/layout/Navbar";
-import Contact from "../components/sections/Contact";
+import Contact from "./Contact";
 import Pricing from "../components/sections/Pricing";
 
 function Subscription() {

@@ -10,7 +10,7 @@ const navigation = [
   { label: "Pricing", href: "/subscription" },
   { label: "Gallery", href: "/#gallery" },
   { label: "Reviews", href: "/#reviews" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 function Navbar() {

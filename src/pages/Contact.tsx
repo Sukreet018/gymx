@@ -1,10 +1,13 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 
+import Footer from "../components/layout/Footer";
+import Navbar from "../components/layout/Navbar";
+
 function Contact() {
   return (
-    <section
-      id="contact"
-      className="scroll-mt-24 bg-(--cream) px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
+    <>
+      <Navbar />
+    <main className="min-h-screen pt-24 bg-(--cream) px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
@@ -38,7 +41,7 @@ function Contact() {
                   </p>
 
                   <p className="mt-1 text-sm text-(--text-muted)">
-                    123 Fitness Avenue, Kolkata, West Bengal
+                    123 GymX, Kolkata, West Bengal
                   </p>
                 </div>
               </div>
@@ -56,7 +59,7 @@ function Contact() {
                   </p>
 
                   <p className="mt-1 text-sm text-(--text-muted)">
-                    +91 98765 43210
+                    +91 10101 10101
                   </p>
                 </div>
               </div>
@@ -74,7 +77,7 @@ function Contact() {
                   </p>
 
                   <p className="mt-1 text-sm text-(--text-muted)">
-                    hello@gymx.com
+                    abcdefgh@mail.com
                   </p>
                 </div>
               </div>
@@ -117,7 +120,10 @@ function Contact() {
           </div>
         </div>
       </div>
-    </section>
+    </main>
+
+      <Footer />
+    </>
   );
 }
 

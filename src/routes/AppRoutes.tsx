@@ -1,12 +1,10 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import PublicLayout from "../layouts/PublicLayout";
+import Contact from "../pages/Contact";
 import Home from "../pages/Home";
-import Login from "../pages/Login";
 import NotFound from "../pages/NotFound";
-import SignUp from "../pages/SignUp";
 import Subscription from "../pages/Subcription";
-import ProtectedRoute from "./ProtectedRoute";
 
 function AppRoutes() {
   return (
@@ -16,15 +14,7 @@ function AppRoutes() {
         <Route element={<PublicLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/subscription" element={<Subscription />} />
-        </Route>
-
-        {/*Auth routes*/}
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-
-        {/*Protected routes*/}
-        <Route element={<ProtectedRoute />}>
-          <Route path="/dashboard" element={<div>Dashboard</div>} />
+          <Route path="/contact" element={<Contact />} />
         </Route>
 
         {/*Redirects & fallback*/}
