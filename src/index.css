@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap");
+
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: false;
+}
+
+@plugin "daisyui/theme" {
+  name: "gymx";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: #faf7f0;
+  --color-base-200: #f3ebdd;
+  --color-base-300: #e5dac8;
+  --color-base-content: #1c241b;
+
+  --color-primary: #1c241b;
+  --color-primary-content: #f3ebdd;
+
+  --color-secondary: #344332;
+  --color-secondary-content: #f3ebdd;
+
+  --color-accent: #b69b62;
+  --color-accent-content: #1c241b;
+
+  --color-neutral: #1c241b;
+  --color-neutral-content: #f3ebdd;
+
+  --color-info: #65705a;
+  --color-info-content: #faf7f0;
+
+  --color-success: #65705a;
+  --color-success-content: #faf7f0;
+
+  --color-warning: #b69b62;
+  --color-warning-content: #1c241b;
+
+  --color-error: #8b5e58;
+  --color-error-content: #faf7f0;
+
+  --radius-selector: 0.75rem;
+  --radius-field: 0.75rem;
+  --radius-box: 1rem;
+
+  --border: 1px;
+}
+
+@theme {
+  --color-olive-dark: #1c241b;
+  --color-olive: #344332;
+  --color-olive-muted: #65705a;
+  --color-olive-light: #87917b;
+
+  --color-cream: #f3ebdd;
+  --color-cream-light: #faf7f0;
+  --color-cream-dark: #e5dac8;
+
+  --color-champagne: #b69b62;
+  --color-champagne-light: #d0bd91;
+
+  --color-border-light: #ddd2bf;
+
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Manrope", sans-serif;
+}
+
+:root {
+  --olive-dark: #1c241b;
+  --olive: #344332;
+  --olive-muted: #65705a;
+  --olive-light: #87917b;
+
+  --cream: #f3ebdd;
+  --cream-light: #faf7f0;
+  --cream-dark: #e5dac8;
+
+  --champagne: #b69b62;
+  --champagne-light: #d0bd91;
+
+  --text-dark: #1c241b;
+  --text-muted: #65705a;
+
+  --border-light: #ddd2bf;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--cream);
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--cream);
+  color: var(--text-dark);
+  font-family: "DM Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Manrope", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--olive);
+  color: var(--cream);
+}
+
+button,
+a,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+}
