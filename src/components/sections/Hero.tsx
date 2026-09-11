@@ -34,7 +34,7 @@ function Hero() {
           {/* cta buttons */}
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              to="/signup"
+              to="/contact"
               className="btn h-auto min-h-0 rounded-full border-none bg-(--cream) px-6 py-3.5 font-semibold text-(--olive-dark) shadow-none hover:bg-(--cream-dark)"
             >
               Start training
