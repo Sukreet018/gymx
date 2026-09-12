@@ -69,7 +69,6 @@ function Footer() {
               <p>hello@gymx.com</p>
               <div className="grid grid-flow-col gap-2 w-max">
                 <FaInstagram />
-                <FaFacebook />
               </div>
             </div>
           </div>
