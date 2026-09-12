@@ -1,5 +1,6 @@
 import { Dumbbell } from "lucide-react";
 import { Link } from "react-router-dom";
+import { FaFacebook , FaInstagram } from "react-icons/fa6";
 
 // footer links
 const footerLinks = [
@@ -66,6 +67,10 @@ function Footer() {
               <p>Kolkata, West Bengal</p>
               <p>+91 98765 43210</p>
               <p>hello@gymx.com</p>
+              <div className="grid grid-flow-col gap-2 w-max">
+                <FaInstagram />
+                <FaFacebook />
+              </div>
             </div>
           </div>
         </div>
