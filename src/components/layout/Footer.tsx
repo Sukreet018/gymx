@@ -77,7 +77,7 @@ function Footer() {
 
         {/* copyright section */}
         <div className="mt-12 border-t border-white/10 pt-6 text-sm text-(--cream)/40">
-          © {new Date().getFullYear()} GymX. All rights reserved
+          © {new Date().getFullYear()} GymX. All rights reserved.
         </div>
       </div>
     </footer>
