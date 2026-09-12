@@ -1,6 +1,6 @@
 import { Dumbbell } from "lucide-react";
 import { Link } from "react-router-dom";
-import { FaFacebook , FaInstagram } from "react-icons/fa6";
+import { FaFacebook, FaInstagram } from "react-icons/fa6";
 
 // footer links
 const footerLinks = [
@@ -17,24 +17,17 @@ function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           {/* brand info */}
           <div>
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 font-display text-xl font-extrabold"
-            >
-              <Dumbbell size={21} />
-              gym<span className="text-(--champagne)">X</span>
+            <Link to="/" className="inline-flex items-center gap-2 font-display text-xl font-extrabold">
+              <Dumbbell size={21} /> gym<span className="text-(--champagne)">X</span>
             </Link>
-
             <p className="mt-4 max-w-sm text-sm leading-7 text-(--cream)/50">
-              A premium training environment built around coaching,
-              consistency and long-term progress.
+              A premium training environment built around coaching, consistency and long-term progress.
             </p>
           </div>
 
           {/* navigation links */}
           <div>
             <h3 className="font-semibold">Explore</h3>
-
             <nav className="mt-4 grid grid-cols-2 gap-3">
               {footerLinks.map((link) =>
                 link.href.startsWith("/#") ? (
@@ -61,7 +54,6 @@ function Footer() {
           {/* contact info */}
           <div>
             <h3 className="font-semibold">Get in touch</h3>
-
             <div className="mt-4 space-y-2 text-sm text-(--cream)/50">
               <p>123 Fitness Avenue</p>
               <p>Kolkata, West Bengal</p>
